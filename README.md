@@ -71,3 +71,136 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 ## License
 
 This project is licensed under the MIT License.
+
+
+
+
+
+
+
+
+# List of books
+
+books = ["Python Basics", "C Programming", "Data Structures"]
+
+# Dictionary to store availability
+
+status = {"Python Basics": "Available",
+
+"C Programming": "Available",
+
+"Data Structures": "Available"}#Stack for last issued books
+
+issued stack = []
+
+#Queue for issue requests
+
+issue_queue=[
+
+#Function to display all books
+
+def display_books():
+
+for b in books:
+
+print(b, "->", status[b])
+
+# Issue book
+
+def issue_book():
+
+name = input("Enter book name to issue: ")
+
+if name in books and status[name] == "Available":
+
+status[name] = "Issued"
+
+issued_stack.append(name)
+
+print(name, "Issued Successfully")
+
+else:
+
+print("Book not available")
+
+# Return book
+
+def return_book():
+
+name = input("Enter book name to return: ")
+
+if name in books and status[name] == "Issued":
+
+status [name] = "Available"
+
+print(name, "Returned Successfully")
+
+else:
+
+print("Invalid Return")
+
+# View last issued book
+
+def view_last_issued():if issued stack:
+
+print("Last Issued:", issued_stack[-1])
+
+else:
+
+print("No books issued yet")
+
+# Add to issue queue
+
+def add_issue_request():
+
+req = input("Enter book name to request: ")
+
+issue_queue.append(req)
+
+print(req, "Added to issue queue")
+
+# View issue queue
+
+def view_issue_queue():
+
+print("Issue Requests:", issue_queue)
+
+# Menu
+
+while True:
+
+print("\n1.Display Books 2.Issue Book 3.Return Book 4.Last Issued")
+
+print("5.Add Issue Request 6.View Issue Queue 7.Exit")
+
+ch = int(input("Enter Choice: "))
+
+if ch ==1
+
+display_books()
+
+elif ch ==2
+
+issue_book()
+
+elif ch ==3
+
+return_book()
+
+elif ch ==4,
+
+view_last_issued
+
+elif ch == 5:
+
+add_issue_request()
+
+elif ch ==6
+
+view_issue_queue()elif ch== 7:
+
+break
+
+else:
+
+print("Invalid Choice")
